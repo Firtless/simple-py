@@ -1,4 +1,5 @@
 import pyautogui
+import time
 
 
 def tracker():
@@ -6,10 +7,23 @@ def tracker():
     return x, y
 
 
-def main():
+def countdown(seconds):
     x, y = tracker()
-    print(f"Mouse position: X={x}, Y={y}")
+    while seconds > 0:
+        print(f"Mouse position: X={x}, Y={y}")
+        print(seconds)
+        time.sleep(1)  # Pause for 1 second
+        seconds -= 1
+    print("Time's up!")
 
 
-if __name__ == "__main__":
-    main()
+countdown(10)
+
+
+# def main():
+#     x, y = tracker()
+#     print(f"Mouse position: X={x}, Y={y}")
+
+
+if __name__ == "__countdown__":
+    countdown()
